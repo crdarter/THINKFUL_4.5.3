@@ -6,7 +6,7 @@ from numpy.random import rand
 from scipy.cluster.vq import kmeans,vq, whiten
 
 
-df = pd.read_csv('un.csv')
+df = pd.read_csv('un2.csv')
 df.head()
 print df.info()
 
