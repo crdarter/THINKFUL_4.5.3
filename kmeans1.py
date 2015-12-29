@@ -1,5 +1,9 @@
 import pandas as pd
+import numpy as np
+import pylab as pl
+import matplotlib.pyplot as plt
 import collections
+
 from pylab import plot,show
 from numpy import vstack,array
 from numpy.random import rand
@@ -23,7 +27,8 @@ centroids,_ = kmeans(w,2)
 idx,_ = vq(coords,centroids)
 
 # some plotting using numpy's logical indexing
-plot(df[idx==0,0],df[idx==0,1],'ob',
-     df[idx==1,0],df[idx==1,1],'or')
-plot(centroids[:,0],centroids[:,1],'sg',markersize=8)
-show()
+pl.plot(coords[:,0], coords[:,1], 'k.', markersize=2)
+pl.scatter(centroids[:,0],centroids[:,1], 
+	marker='x', s=169, linewidths=3,
+	color='w', zorder=10)
+pl.show()
